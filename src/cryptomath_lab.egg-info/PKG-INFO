@@ -1,0 +1,63 @@
+Metadata-Version: 2.4
+Name: cryptomath-lab
+Version: 0.1.0
+Summary: Educational cryptography & randomness lab: toy Feistel, simple PRGs, and randomness tests with a clean CLI.
+Author: Luis Sebastian Camacho Santillan
+License: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: typer>=0.12.0
+Requires-Dist: rich>=13.7.0
+
+# cryptomath-lab
+
+**Educational cryptography & randomness lab** in Python. Showcases:
+- A **toy Feistel network** (for intuition)
+- **Simple PRGs**: linear congruential generator (LCG) and SHA256-counter PRG
+- **Randomness tests**: monobit, runs, chi-square (bytes)
+- A clean **CLI** (`cml`) built with Typer
+- Tests with `pytest`, typed code, and docstrings
+
+> This project is for learning/demo only — not production crypto!
+
+## Quickstart
+
+```bash
+# create & activate a venv (optional but recommended)
+python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+
+# install in editable mode
+pip install -e .
+
+# run tests
+pytest
+
+# explore the CLI
+cml --help
+cml prg sha256 --n 32 --seed "hello"
+cml prg lcg --n 10 --seed 12345
+cml feistel encrypt --key "mykey" --message "48656c6c6f" --rounds 4
+cml test monobit --hex "aabbccddeeff"
+```
+
+## CLI Overview
+
+- `cml prg sha256 --n 64 --seed "abc"`: generate 64 bytes via SHA256 counter PRG
+- `cml prg lcg --n 16 --seed 42`: generate 16 bytes with LCG
+- `cml feistel encrypt|decrypt --key K --message HEX --rounds R`: toy Feistel on hex input
+- `cml test monobit|runs|chisq --hex HEX`: run simple randomness tests on byte stream
+
+## Project Goals (What this shows on your CV)
+- Clean package structure (`src/` layout), CLI, tests, and docs
+- Clear, typed Python code with docstrings
+- Reproducible results and unit tests
+- CI workflow (pytest) for professionalism
+
+## Roadmap
+- Add frequency test within blocks (NIST SP800-22 style; educational)
+- Add dieharder bridges (optional, via subprocess)
+- Add stream-cipher demo (CTR-mode toy)
+
+## License
+MIT

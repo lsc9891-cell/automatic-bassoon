@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cryptomath-lab"
+version = "0.1.0"
+description = "Educational cryptography & randomness lab: toy Feistel, simple PRGs, and randomness tests with a clean CLI."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Luis Sebastian Camacho Santillan"}]
+license = {text = "MIT"}
+dependencies = [
+    "typer>=0.12.0",
+    "rich>=13.7.0",
+]
+
+[project.scripts]
+cml = "cryptomath_lab.cli:app"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["cryptomath_lab"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+pythonpath = ["src"]
+
+[tool.black]
+line-length = 100

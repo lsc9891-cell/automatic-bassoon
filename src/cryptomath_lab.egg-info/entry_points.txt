@@ -1,0 +1,2 @@
+[console_scripts]
+cml = cryptomath_lab.cli:app

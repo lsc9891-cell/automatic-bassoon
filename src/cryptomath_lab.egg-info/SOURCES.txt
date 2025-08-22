@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+src/cryptomath_lab/__init__.py
+src/cryptomath_lab/cli.py
+src/cryptomath_lab/feistel.py
+src/cryptomath_lab/prg.py
+src/cryptomath_lab/randtests.py
+src/cryptomath_lab.egg-info/PKG-INFO
+src/cryptomath_lab.egg-info/SOURCES.txt
+src/cryptomath_lab.egg-info/dependency_links.txt
+src/cryptomath_lab.egg-info/entry_points.txt
+src/cryptomath_lab.egg-info/requires.txt
+src/cryptomath_lab.egg-info/top_level.txt
+tests/test_cli.py
+tests/test_monobit.py
